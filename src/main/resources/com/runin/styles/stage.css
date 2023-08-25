@@ -1,0 +1,63 @@
+#menuButton{
+-fx-background-color:transparent;
+-fx-font-size:20px;
+-fx-font-weight:bold;
+-fx-font-family:"System";
+}
+
+#menuButton .mfx-ripple-generator{
+-mfx-paused:true;
+}
+
+#menuButton:hover,
+#menuButton:focus{
+-fx-background-color: linear-gradient(to top right, #ffca69, #ffb224);
+}
+
+#selected{
+-fx-background-color: linear-gradient(to top right, #ffca69, #ffb224);
+-fx-font-size:20px;
+-fx-font-weight:bold;
+-fx-font-family:"System";
+}
+
+#round{
+-fx-background-radius:50%;
+-fx-border-radius:50%;
+}
+
+#topPane{
+-fx-background-radius:5pt;
+-fx-border-color:transparent;
+}
+
+#topPane:hover{
+-fx-background-color: #eaeaea;
+}
+
+.exit{
+-fx-background-color:transparent;
+-fx-border-color:linear-gradient(to top right, #ffca69, #ffb224);
+-fx-border-width:3px;
+}
+
+.exit:hover{
+-fx-background-color:linear-gradient(to top right, #ffca69, #ffb224);
+}
+
+.maximize,
+.minimize{
+-fx-background-color:transparent;
+-fx-border-color:linear-gradient(to top right, #ffca69, #ffb224);
+-fx-border-width:3px;
+}
+
+.maximize:hover{
+/*-fx-background-color:rgba(120,190,33,0.4);*/
+-fx-border-width:8px;
+}
+
+.minimize:hover{
+/*-fx-background-color:rgba(255,233,0,0.4);*/
+-fx-border-width:6px;
+}

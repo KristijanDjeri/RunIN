@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="486.0" prefWidth="460.0" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" layoutX="130.0" layoutY="419.0" prefHeight="100.0" prefWidth="200.0" spacing="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <MFXButton id="secondary" fx:id="closeButton" onAction="#close" prefHeight="60.0" prefWidth="120.0" text="Close" />
+            <MFXButton id="primary" fx:id="applyButton" layoutX="180.0" layoutY="30.0" onAction="#apply" prefHeight="60.0" prefWidth="120.0" text="Apply" />
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" layoutX="140.0" layoutY="46.0" spacing="40.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="filterLabel" text="Filter">
+               <font>
+                  <Font name="Cantarell Extra Bold" size="35.0" />
+               </font>
+            </Label>
+            <MFXComboBox fx:id="categoryComboBox" floatMode="BORDER" floatingText="Category" prefHeight="42.0" prefWidth="235.0" />
+            <MFXComboBox fx:id="distanceComboBox" floatMode="BORDER" floatingText="Distance" layoutX="123.0" layoutY="125.0" prefHeight="42.0" prefWidth="235.0" />
+            <MFXComboBox fx:id="genderComboBox" floatMode="BORDER" floatingText="Gender" layoutX="123.0" layoutY="207.0" prefHeight="42.0" prefWidth="158.0" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

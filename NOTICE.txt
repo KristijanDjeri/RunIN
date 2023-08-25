@@ -1,0 +1,29 @@
+NOTICE for RunIN
+
+This product includes software developed by Kristijan Đeri.
+
+RunIN is licensed under the GNU General Public License v3.0 (GPLv3). A full copy of this license can be found in the LICENSE.txt file in this distribution.
+
+Third-Party Libraries:
+----------------------
+
+1. H2 Database:
+- License: Mozilla Public License 2.0 (MPL 2.0)
+- Homepage: https://h2database.com/html/main.html
+- Copyright: Copyright 2004-2023 H2 Group
+- Notes: RunIN uses the H2 Database library as its database engine. No modifications were made to the core functionality.
+
+  	This software contains unmodified binary redistributions for
+	H2 database engine (https://h2database.com/),
+	which is dual licensed and available under the MPL 2.0
+	(Mozilla Public License) or under the EPL 1.0 (Eclipse Public License).
+	An original copy of the license agreement can be found at:
+	https://h2database.com/html/license.html
+
+2. MaterialFX:
+- License: GNU General Public License v3.0 (GPLv3)
+- Homepage: https://github.com/palexdev/MaterialFX
+- Copyright: Copyright (C) 2022 Parisi Alessandro
+- Notes: RunIN uses the MaterialFX library for stylizing JavaFX interfaces. Minor modifications were made to the appearance components of the library to suit the needs of this application.
+
+This notice is provided for informational purposes only and does not modify the license terms under which the software is licensed.

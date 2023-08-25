@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="box" prefHeight="150.0" prefWidth="504.0" style="-fx-border-radius: 0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <StackPane id="round" layoutX="244.0" layoutY="-61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#close" prefHeight="25.0" prefWidth="25.0" styleClass="exit" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+        <HBox alignment="CENTER" layoutX="7.0" layoutY="17.0" prefHeight="169.0" prefWidth="444.0" spacing="60.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+            <children>
+                <MFXButton id="item" fx:id="runnersButton" alignment="BASELINE_CENTER" contentDisplay="TOP" layoutX="180.0" layoutY="15.0" onAction="#runners" prefHeight="100.0" prefWidth="100.0" wrapText="true">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </MFXButton>
+                <MFXButton id="item" fx:id="bothButton" alignment="BASELINE_CENTER" contentDisplay="TOP" layoutX="230.0" layoutY="15.0" onAction="#everything" prefHeight="100.0" prefWidth="100.0" wrapText="true">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </MFXButton>
+            <MFXButton id="item" fx:id="eventsButton" alignment="BASELINE_CENTER" contentDisplay="TOP" layoutX="72.0" layoutY="13.0" onAction="#events" prefHeight="100.0" prefWidth="100.0" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MFXButton>
+            </children>
+        </HBox>
+    </children>
+    <stylesheets>
+        <URL value="@../styles/stage.css" />
+        <URL value="@../styles/general.css" />
+    </stylesheets>
+</AnchorPane>

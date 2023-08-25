@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="725.0" prefWidth="1200.0" stylesheets="@../styles/stage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="menuVbox" alignment="CENTER" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <MFXButton id="menuButton" fx:id="homeButton" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#homeView" prefHeight="70.0" prefWidth="200.0" rippleAnimateBackground="false" text="Home">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </MFXButton>
+            <MFXButton id="menuButton" fx:id="runnersButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="150.0" maxWidth="1.7976931348623157E308" onAction="#runnersView" prefHeight="70.0" prefWidth="200.0" rippleAnimateBackground="false" text="Runners">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </MFXButton>
+            <MFXButton id="menuButton" fx:id="eventsButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="220.0" maxWidth="1.7976931348623157E308" onAction="#eventsView" prefHeight="70.0" prefWidth="200.0" rippleAnimateBackground="false" text="Events">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </MFXButton>
+            <MFXButton id="menuButton" fx:id="historyButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="430.0" maxWidth="1.7976931348623157E308" onAction="#historyView" prefHeight="70.0" prefWidth="200.0" rippleAnimateBackground="false" text="History">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </MFXButton>
+            <MFXButton id="menuButton" fx:id="settingsButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="465.0" maxWidth="1.7976931348623157E308" onAction="#settingsView" prefHeight="70.0" prefWidth="200.0" rippleAnimateBackground="false" text="Settings">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="subScenePane" layoutX="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <SubScene fx:id="subScene" height="700.0" width="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <root>
+                <Region />
+              </root>
+            </SubScene>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="topPane" fx:id="topPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <StackPane id="round" fx:id="exit" layoutX="1253.0" layoutY="2.0" onMouseClicked="#exit" prefHeight="25.0" prefWidth="25.0" styleClass="exit" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+            <StackPane id="round" fx:id="maximize" layoutX="1175.0" layoutY="10.0" onMouseClicked="#maximize" prefHeight="25.0" prefWidth="25.0" styleClass="maximize" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0" />
+            <StackPane id="round" fx:id="minimize" layoutX="1140.0" layoutY="10.0" onMouseClicked="#minimize" prefHeight="25.0" prefWidth="25.0" styleClass="minimize" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <Pane fx:id="shadowPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.1);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>

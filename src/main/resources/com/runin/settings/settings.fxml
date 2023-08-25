@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MFXScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="2000.0" prefWidth="986.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="441.0" layoutY="887.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0">
+                     <children>
+                        <MFXButton id="red" fx:id="deleteButton" prefHeight="60.0" prefWidth="170.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </MFXButton>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="700.0" prefWidth="986.0" spacing="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" hgap="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="533.0" prefWidth="836.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="languageLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Language:" wrapText="true" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="35.0" />
+                                 </font>
+                              </Label>
+                              <MFXComboBox fx:id="languageComboBox" floatMode="DISABLED" prefHeight="50.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </MFXComboBox>
+                              <Label fx:id="backupLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Backup:" wrapText="true" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="35.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <MFXTextField fx:id="backupTextField" allowEdit="false" floatMode="DISABLED" prefHeight="50.0" prefWidth="265.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </MFXTextField>
+                                    <MFXButton id="primary" fx:id="backupButton" contentDisplay="GRAPHIC_ONLY" prefHeight="50.0" prefWidth="60.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </MFXButton>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="settingsLabel" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Settings" wrapText="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font name="Cantarell Extra Bold" size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" spacing="100.0">
+                           <children>
+                              <MFXButton id="primary" fx:id="importButton" prefHeight="60.0" prefWidth="170.0" text="Import">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton id="secondary" fx:id="creditsButton" prefHeight="60.0" prefWidth="170.0" text="Credits">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </MFXButton>
+                              <MFXButton id="primary" fx:id="exportButton" layoutX="208.0" layoutY="33.0" prefHeight="60.0" prefWidth="170.0" text="Export">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </MFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </MFXScrollPane>
+   </children>
+</AnchorPane>

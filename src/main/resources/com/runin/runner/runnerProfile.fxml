@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane hgap="10.0" layoutX="31.0" layoutY="40.0" vgap="10.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="150.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="180.0" prefWidth="230.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="180.0" prefWidth="230.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints fillHeight="false" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <StackPane id="box" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="180.0" style="-fx-border-radius: 50%; -fx-background-radius: 50%; -fx-background-color: white;" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin>
+               <children>
+                  <ImageView fx:id="profileImageView" fitHeight="170.0" fitWidth="170.0" pickOnBounds="true" />
+               </children>
+            </StackPane>
+            <MFXButton id="back" buttonType="RAISED" depthLevel="LEVEL5" onAction="#back" text="&lt;" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </MFXButton>
+            <MFXTextField fx:id="firstNameTextField" floatMode="BORDER" floatingText="First Name" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </MFXTextField>
+            <MFXTextField fx:id="lastNameTextField" floatMode="BORDER" floatingText="Last Name" layoutX="200.0" layoutY="53.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </MFXTextField>
+            <MFXTextField fx:id="emailTextField" floatMode="BORDER" floatingText="Email Address" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MFXTextField>
+            <MFXDatePicker fx:id="dateOfBirthPicker" floatMode="BORDER" floatingText="Date Of Birth" maxWidth="1.7976931348623157E308" popupOffsetX="200.0" prefHeight="44.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MFXDatePicker>
+            <MFXComboBox fx:id="genderComboBox" floatMode="BORDER" floatingText="Gender" maxWidth="1.7976931348623157E308" popupOffsetX="200.0" prefHeight="44.0" prefWidth="220.0" selectable="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MFXComboBox>
+            <MFXTextField fx:id="phoneTextField" floatMode="BORDER" floatingText="Phone Number" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MFXTextField>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

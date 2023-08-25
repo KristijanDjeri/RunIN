@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="552.0" prefWidth="440.0" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutY="-2.0" prefHeight="450.0" prefWidth="440.0" spacing="30.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="addEventLabel" text="Add Event">
+               <font>
+                  <Font name="Cantarell Extra Bold" size="40.0" />
+               </font>
+               <padding>
+                  <Insets bottom="40.0" />
+               </padding>
+            </Label>
+            <MFXTextField fx:id="nameTextField" floatMode="BORDER" floatingText="Name" prefHeight="50.0" prefWidth="330.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MFXTextField>
+            <MFXTextField fx:id="locationTextField" floatMode="BORDER" floatingText="Location" layoutX="63.0" layoutY="60.0" prefHeight="50.0" prefWidth="330.0" styleClass="mfx-text-field">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </MFXTextField>
+            <MFXDatePicker fx:id="datePicker" floatMode="BORDER" floatingText="Date" prefHeight="42.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" top="50.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="90.0" prefWidth="436.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <MFXButton id="secondary" fx:id="cancelButton" depthLevel="LEVEL0" onAction="#cancel" prefHeight="48.0" prefWidth="134.0" rippleColor="#757575" text="Cancel">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MFXButton>
+            <MFXButton id="primary" fx:id="addButton" buttonType="RAISED" depthLevel="LEVEL3" layoutX="161.0" layoutY="31.0" onAction="#add" prefHeight="48.0" prefWidth="134.0" rippleColor="ORANGE" text="Add Event">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MFXButton>
+         </children>
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

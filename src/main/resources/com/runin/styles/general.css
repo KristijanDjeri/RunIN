@@ -1,0 +1,98 @@
+#primary{
+-fx-background-color: linear-gradient(to top right, #ffca69, #ff9800);
+-fx-background-radius:3pt;
+-fx-border-width:2px;
+-fx-border-color: transparent;
+-fx-border-radius:3pt;
+}
+
+#primary:hover{
+-fx-background-color:white;
+-fx-border-color:linear-gradient(to top right, #ffca69, #ff9800);
+}
+
+#back{
+-fx-background-color: linear-gradient(to top right, #ffca69, #ff9800);
+-fx-background-radius:4pt;
+}
+
+#secondary{
+-fx-border-color: linear-gradient(to top right, #ffca69, #ff9800);
+-fx-border-width:2px;
+-fx-border-radius:3pt;
+-fx-background-radius:3pt;
+-fx-font-size: 14px;
+}
+
+#secondary:hover{
+-fx-border-color:transparent;
+-fx-background-color:linear-gradient(to top right, #ffca69, #ff9800);
+}
+
+#searchButton{
+-fx-border-color:#a8a8a8;
+-fx-border-radius:5px;
+-fx-font-size: 14px;
+}
+
+#searchTextField{
+-fx-border-color:a8a8a8;
+-fx-border-radius:5px;
+-fx-font-size: 14px;
+}
+
+#region{
+-fx-border-color: lightgray;
+-fx-border-radius: 5px;
+}
+
+#box,
+#item{
+-fx-border-color:lightgray;
+-fx-border-width: 2px;
+-fx-border-radius: 5px;
+}
+
+#item:hover{
+-fx-scale-x:1.1;
+-fx-scale-y:1.1;
+}
+
+#red{
+-fx-border-color:red;
+-fx-border-width: 2px;
+-fx-border-radius: 5px;
+-fx-background-color: red;
+-fx-text-fill: white;
+}
+
+#neutralGreen{
+-fx-background-color:transparent;
+-fx-border-color:lightgray;
+-fx-border-width:2px;
+-fx-border-radius:5px;
+}
+
+#neutralGreen:hover{
+-fx-background-color:lime;
+-fx-border-color:lime;
+}
+
+#neutralRed{
+-fx-background-color:transparent;
+-fx-border-color:lightgray;
+-fx-border-width:2px 0px 2px 0px;
+-fx-text-fill:transparent;
+}
+
+#neutralRed:hover{
+-fx-background-color:#FF7276;
+-fx-border-color:#FF7276;
+-fx-text-fill:black;
+}
+
+#dashedGreenBorder{
+-fx-border-color:lime;
+-fx-border-style:dashed;
+-fx-border-width:2px;
+}

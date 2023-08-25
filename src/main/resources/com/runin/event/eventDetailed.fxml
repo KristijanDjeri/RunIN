@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyTableView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MFXScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="826.0" prefWidth="1000.0">
+               <children>
+                  <GridPane alignment="CENTER" hgap="10.0" layoutX="20.0" layoutY="20.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="90.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="473.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="487.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="354.0" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="306.0" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="306.0" vgrow="ALWAYS" />
+                     </rowConstraints>
+                     <children>
+                        <PieChart fx:id="pieChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Distances" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="80.0" GridPane.columnIndex="1" GridPane.rowSpan="2">
+                           <children>
+                              <MFXButton id="secondary" fx:id="editEventButton" depthLevel="LEVEL5" prefHeight="93.0" prefWidth="194.0" rippleColor="ORANGE" text="Edit Event" />
+                              <MFXButton id="secondary" fx:id="participantButton" depthLevel="LEVEL5" prefHeight="93.0" prefWidth="194.0" rippleColor="ORANGE" text="Participants" />
+                              <MFXButton id="primary" fx:id="actionButton" buttonType="RAISED" depthLevel="LEVEL5" prefHeight="93.0" prefWidth="194.0" rippleColor="#d78d0e" text="Start Event..." />
+                           </children>
+                        </VBox>
+                        <MFXLegacyTableView fx:id="tableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1" />
+                        <MFXScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <GridPane.margin>
+                              <Insets top="20.0" />
+                           </GridPane.margin>
+                           <content>
+                              <FlowPane fx:id="flowPane" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" />
+                           </content>
+                        </MFXScrollPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="50.0" />
+                     </padding>
+                  </GridPane>
+                  <MFXButton id="back" buttonType="RAISED" depthLevel="LEVEL5" layoutX="34.0" layoutY="29.0" onAction="#back" text="&lt;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </MFXButton>
+                  <Label fx:id="nameLabel" alignment="CENTER" layoutX="477.0" layoutY="47.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font name="Cantarell Extra Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </MFXScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/general.css" />
+      <URL value="@../styles/controls/MFXLegacyTableView.css" />
+   </stylesheets>
+</AnchorPane>

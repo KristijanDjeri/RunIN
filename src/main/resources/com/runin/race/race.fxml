@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView?>
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyTableView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../styles/general.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane layoutX="-15.0" layoutY="-11.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane fx:id="gridPane" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" StackPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="250.0" minWidth="10.0" prefWidth="225.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="575.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="250.0" minWidth="10.0" prefWidth="225.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="177.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="423.0" valignment="CENTER" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <Region id="region" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                     <GridPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </GridPane.margin>
+                  </Region>
+                  <Label fx:id="stopwatchLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="00:00:00" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                     <GridPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Hack Regular" size="70.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="rightVbox" alignment="CENTER" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="50.0" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="numberTextField" alignment="CENTER" onAction="#enter" prefHeight="70.0" prefWidth="120.0" promptText="Number" styleClass="mfx-text-field">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <MFXButton id="primary" fx:id="enterButton" buttonType="RAISED" onAction="#enter" prefHeight="80.0" prefWidth="125.0" text="Enter" />
+                        <MFXButton id="secondary" fx:id="removeButton" buttonType="RAISED" layoutX="56.0" layoutY="335.0" onAction="#remove" prefHeight="80.0" prefWidth="125.0" text="Remove" />
+                     </children>
+                  </VBox>
+                  <MFXLegacyTableView fx:id="tableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../styles/controls/MFXLegacyTableView.css" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                     <GridPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </GridPane.margin>
+                  </MFXLegacyTableView>
+                  <MFXButton id="red" fx:id="stopwatchButton" onAction="#stop" text="Stop" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXButton>
+                  <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.hgrow="ALWAYS" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS">
+                     <children>
+                        <MFXLegacyListView fx:id="categoryListView" fixedCellSize="100.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                           <stylesheets>
+                              <URL value="@../styles/controls/MFXLegacyListCell.css" />
+                              <URL value="@../styles/controls/MFXLegacyListView.css" />
+                           </stylesheets>
+                        </MFXLegacyListView>
+                        <MFXLegacyListView fx:id="distanceListView" fixedCellSize="100.0" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                           <stylesheets>
+                              <URL value="@../styles/controls/MFXLegacyListCell.css" />
+                              <URL value="@../styles/controls/MFXLegacyListView.css" />
+                           </stylesheets>
+                        </MFXLegacyListView>
+                        <MFXLegacyListView fx:id="genderListView" fixedCellSize="100.0" layoutX="10.0" layoutY="310.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                           <stylesheets>
+                              <URL value="@../styles/controls/MFXLegacyListCell.css" />
+                              <URL value="@../styles/controls/MFXLegacyListView.css" />
+                           </stylesheets>
+                        </MFXLegacyListView>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <AnchorPane fx:id="startPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" visible="false" StackPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" layoutX="14.0" layoutY="226.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <MFXButton id="primary" fx:id="startButton" onAction="#start" prefHeight="164.0" prefWidth="289.0" style="-fx-font-size: 32; -fx-font-weight: bold;" text="START">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </MFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

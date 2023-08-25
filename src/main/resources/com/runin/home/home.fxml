@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MFXScrollPane fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane maxHeight="1.7976931348623157E308" style="-fx-background-color: transparent;">
+               <children>
+                  <VBox alignment="TOP_CENTER" spacing="50.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                     <children>
+                        <AnchorPane id="banner" prefHeight="480.0">
+                           <children>
+                              <HBox alignment="CENTER" layoutX="91.0" layoutY="106.0" prefHeight="100.0" prefWidth="200.0" spacing="100.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
+                                 <children>
+                                    <Label id="headerText" fx:id="headerLabel" text="RunIN">
+                                       <font>
+                                          <Font name="Noto Sans Batak Regular" size="80.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="headerImageView" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                       <image>
+                                          <Image url="@../../../assets/illustrations/Jogging-amico.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <TextFlow id="shadow" fx:id="quoteTextFlow" style="-fx-background-color: transparent; -fx-border-color: lightgray; -fx-border-width: 2 0 2 0;" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="30.0" top="30.0" />
+                           </padding></TextFlow>
+                        <HBox fx:id="eventHBox" alignment="CENTER" spacing="175.0">
+                           <children>
+                              <VBox fx:id="recentVBox">
+                                 <children>
+                                    <Label fx:id="recentEventLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Most Recent Event:" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane id="banner" prefHeight="291.0" prefWidth="330.0">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="109.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="30.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
+                                             <children>
+                                                <Label fx:id="recentEventName" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="[Event Name]" wrapText="true" VBox.vgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <MFXButton id="secondary" fx:id="recentEventButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="68.0" prefWidth="250.0" text="View Event" VBox.vgrow="SOMETIMES">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </MFXButton>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="upcomingVBox" layoutX="308.0" layoutY="10.0">
+                                 <children>
+                                    <Label fx:id="upcomingEventLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Upcoming Event:" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane id="banner" prefHeight="291.0" prefWidth="330.0">
+                                       <children>
+                                          <VBox alignment="CENTER" layoutX="109.0" layoutY="22.0" prefHeight="200.0" prefWidth="100.0" spacing="30.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
+                                             <children>
+                                                <Label fx:id="upcomingEventName" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="[Event Name]" wrapText="true" VBox.vgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <MFXButton id="secondary" fx:id="upcomingEventButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="68.0" prefWidth="250.0" text="View Event" VBox.vgrow="SOMETIMES">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </MFXButton>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </MFXScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/general.css" />
+      <URL value="@../styles/home.css" />
+   </stylesheets>
+</AnchorPane>
