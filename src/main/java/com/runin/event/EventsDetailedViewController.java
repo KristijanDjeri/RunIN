@@ -394,7 +394,7 @@ public class EventsDetailedViewController implements Initializable {
                     try {
 
                         if(os.contains("win")){
-                            new ProcessBuilder("cmd","/c","start","",path).start();
+                            new ProcessBuilder("cmd","/c","start","\"\"","\""+path+"\"").start();
                         }else if(os.contains("mac")){
                             new  ProcessBuilder("open",path).start();
                         }else if(os.contains("nix")||os.contains("nux")){
