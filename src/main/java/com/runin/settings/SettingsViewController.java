@@ -17,6 +17,7 @@
 
 package com.runin.settings;
 
+import com.runin.home.HomeViewController;
 import com.runin.model_managers.EventTableManager;
 import com.runin.model_managers.RunnerTableManager;
 import com.runin.shared.*;
@@ -109,6 +110,7 @@ public class SettingsViewController extends ImportExportBackup implements Initia
                 RunnerTableManager.getInstance().refresh();
                 Objects.requireNonNull(EventTableManager.getInstance(Section.EVENT)).refresh();
                 Objects.requireNonNull(EventTableManager.getInstance(Section.HISTORY)).refresh();
+                HomeViewController.getInstance().loadEvents();
                 dialogController.close();
             });
             dialogController.showWarning(Lang.get("warning"));

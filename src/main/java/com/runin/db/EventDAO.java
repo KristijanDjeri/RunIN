@@ -152,7 +152,7 @@ public class EventDAO extends DAO implements IDAO<Event> {
     public Event getUpcomingEvent() throws SQLException {
         Event event;
 
-        PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT * FROM Events WHERE finished = FALSE AND date > CURRENT_DATE() ORDER BY date ASC LIMIT 1");
+        PreparedStatement preparedStatement = getConnection().prepareStatement("SELECT * FROM Events WHERE finished = FALSE AND date >= CURRENT_DATE() ORDER BY date ASC LIMIT 1");
         ResultSet result = preparedStatement.executeQuery();
         event = (result.next())?new ConvertResultSet().toEventModel(result):null;
         close(preparedStatement,result);

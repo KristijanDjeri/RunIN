@@ -56,6 +56,15 @@ public class HomeViewController implements Initializable {
     @FXML
     private MFXButton recentEventButton,upcomingEventButton;
 
+    private static HomeViewController INSTANCE;
+
+    public static HomeViewController getInstance(){
+        if(INSTANCE==null){
+            INSTANCE = new HomeViewController();
+        }
+        return INSTANCE;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         headerImageView.setImage(ImageManager.getIllustration("Jogging-amico.png"));
@@ -82,6 +91,11 @@ public class HomeViewController implements Initializable {
             quoteTextFlow.getChildren().add(text);
         }
 
+        loadEvents();
+
+    }
+
+    public void loadEvents(){
         Event recentEvent,upcomingEvent;
 
         EventDAO eventDAO = new EventDAO();
@@ -120,4 +134,5 @@ public class HomeViewController implements Initializable {
             }
         }
     }
+
 }

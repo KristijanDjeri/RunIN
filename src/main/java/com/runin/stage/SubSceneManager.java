@@ -45,7 +45,7 @@ public class SubSceneManager {
 
     private void insertSections(){
         sectionList.add(null);
-        sectionList.add(createSubScene(FXMLPaths.HOME.PATH, new HomeViewController()));
+        sectionList.add(createSubScene(FXMLPaths.HOME.PATH, HomeViewController.getInstance()));
         sectionList.add(createSubScene(FXMLPaths.TABLE_VIEW.PATH, new RunnersMainViewController()));
         sectionList.add(createSubScene(FXMLPaths.TABLE_VIEW.PATH, new EventsMainViewController()));
         sectionList.add(createSubScene(FXMLPaths.TABLE_VIEW.PATH, new HistoryViewController()));

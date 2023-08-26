@@ -380,25 +380,39 @@ public class EventsDetailedViewController implements Initializable {
         fileButton.setPrefWidth(90);
         fileButton.setAlignment(Pos.BOTTOM_CENTER);
         fileButton.setContentDisplay(ContentDisplay.TOP);
-        if(file.getName().endsWith(".png")||file.getName().endsWith(".jpg")||file.getName().endsWith(".jpeg")){
+        if(file.getName().endsWith(".png")||file.getName().endsWith(".jpeg")||file.getName().endsWith(".gif")||file.getName().endsWith(".bmp")){
             fileButton.setGraphic(ImageManager.getImageView(new Image("file:"+file.getAbsolutePath()),40));
         }else{
             fileButton.setGraphic(ImageManager.getImageView(ImageManager.getIcon("file"),40));
         }
         fileButton.setOnMouseClicked(x->{
             if(x.getButton()== MouseButton.PRIMARY&&x.getClickCount()>1) {
-                try {
-                    Desktop desktop = Desktop.getDesktop();
-                    if (desktop.isSupported(Desktop.Action.APP_OPEN_FILE)) {
-                        desktop.open(file);
-                    } else {
+                new Thread(()->{
+                    String os = System.getProperty("os.name");
+
+                    String path = file.getAbsolutePath();
+
+                    try {
+
+                        if(os.contains("win")){
+                            new ProcessBuilder("cmd","/c","start","",path).start();
+                        }else if(os.contains("mac")){
+                            new  ProcessBuilder("open",path).start();
+                        }else if(os.contains("nix")||os.contains("nux")){
+                            new ProcessBuilder("xdg-open",path).start();
+                        }else{
+                            DialogController dialogController = new DialogController(StageViewController.getStage());
+                            dialogController.setContentText(Lang.get("fileLocation")+":\n" + file.getAbsolutePath());
+                            dialogController.showInfo(Lang.get("unableToOpenFile"));
+                        }
+
+                    } catch (IOException e) {
                         DialogController dialogController = new DialogController(StageViewController.getStage());
                         dialogController.setContentText(Lang.get("fileLocation")+":\n" + file.getAbsolutePath());
                         dialogController.showInfo(Lang.get("unableToOpenFile"));
+                        throw new RuntimeException(e);
                     }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                }).start();
             }else{
                 fileButton.requestFocus();
             }
