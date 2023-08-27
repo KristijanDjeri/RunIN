@@ -23,24 +23,26 @@ import com.runin.shared.Lang;
 import com.runin.shared.ProjectPaths;
 import com.runin.stage.StageViewController;
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 
  public class Main extends Application {
+
+     private static Main INSTANCE;
+
     @Override
     public void start(Stage stage) throws IOException {
 
+        INSTANCE = this;
         Lang.loadSelectedLanguage();
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/runin/stage/stage.fxml"));
         StageViewController stageViewController = StageViewController.getInstance();
         fxmlLoader.setController(stageViewController);
@@ -55,9 +57,16 @@ import java.nio.file.StandardCopyOption;
     }
 
     public static void main(String[] args) {
-
         checkDirectories();
         launch();
+    }
+
+    public static Main getInstance(){
+        return INSTANCE;
+    }
+
+    public HostServices getHostServicesObject(){
+        return getHostServices();
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")

@@ -21,6 +21,7 @@ import com.runin.db.CategoryDAO;
 import com.runin.db.EventDAO;
 import com.runin.db.ParticipantDAO;
 import com.runin.history.HistoryViewController;
+import com.runin.main.Main;
 import com.runin.model_managers.ResultTableManager;
 import com.runin.models.ResultTable;
 import com.runin.participant.ParticipantsViewController;
@@ -34,6 +35,7 @@ import com.runin.stage.StageViewController;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import io.github.palexdev.materialfx.controls.legacy.MFXLegacyTableView;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -388,29 +390,20 @@ public class EventsDetailedViewController implements Initializable {
             if(x.getButton()== MouseButton.PRIMARY&&x.getClickCount()>1) {
                 new Thread(()->{
                     String os = System.getProperty("os.name");
-
-                    String path = file.getAbsolutePath();
-
-                    try {
-
-                        if(os.contains("win")){
-                            new ProcessBuilder("cmd","/c","start","\"\"","\""+path+"\"").start();
-                        }else if(os.contains("mac")){
-                            new  ProcessBuilder("open",path).start();
-                        }else if(os.contains("nix")||os.contains("nux")){
-                            new ProcessBuilder("xdg-open",path).start();
+                    String path = file.toURI().toString();
+                        if(os.toLowerCase().contains("win")){
+                            Main.getInstance().getHostServicesObject().showDocument(path);
+                        }else if(os.toLowerCase().contains("mac")){
+                            Main.getInstance().getHostServicesObject().showDocument(path);
+                        }else if(os.toLowerCase().contains("nix")||os.toLowerCase().contains("nux")){
+                            Main.getInstance().getHostServicesObject().showDocument(path);
                         }else{
-                            DialogController dialogController = new DialogController(StageViewController.getStage());
-                            dialogController.setContentText(Lang.get("fileLocation")+":\n" + file.getAbsolutePath());
-                            dialogController.showInfo(Lang.get("unableToOpenFile"));
+                            Platform.runLater(()->{
+                                DialogController dialogController = new DialogController(StageViewController.getStage());
+                                dialogController.setContentText(Lang.get("fileLocation")+":\n" + file.getAbsolutePath());
+                                dialogController.showInfo(Lang.get("unableToOpenFile"));
+                            });
                         }
-
-                    } catch (IOException e) {
-                        DialogController dialogController = new DialogController(StageViewController.getStage());
-                        dialogController.setContentText(Lang.get("fileLocation")+":\n" + file.getAbsolutePath());
-                        dialogController.showInfo(Lang.get("unableToOpenFile"));
-                        throw new RuntimeException(e);
-                    }
                 }).start();
             }else{
                 fileButton.requestFocus();
